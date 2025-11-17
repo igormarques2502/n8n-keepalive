@@ -2,7 +2,7 @@ name: Keep N8N Alive
 
 on:
   schedule:
-    - cron: "*/12 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
