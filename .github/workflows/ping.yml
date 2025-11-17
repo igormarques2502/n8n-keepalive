@@ -1,0 +1,16 @@
+name: Keep N8N Alive
+
+on:
+  schedule:
+    - cron: "*/12 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send keep-alive ping
+        run: |
+          curl -X POST "https://n8n-3ivv.onrender.com/webhook/meta-verify" \
+          -H "Content-Type: application/json" \
+          -d '{"ping": "keep-alive"}'
